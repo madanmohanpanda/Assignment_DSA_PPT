@@ -1,0 +1,105 @@
+Q1. What are the Conditional Operators in Java?
+    Conditional operators in java are 
+    i. <=, >=, <, >
+    ii. Logican or ->  ||
+    iii. Logical and  &&
+    iv. Logical not  !
+    v. equality check  ==
+
+Q2. What are the types of operators based on the number of operands?
+    There are three types of operators in java based on the operands.
+
+    i> Unary
+    ii> binary
+    iii. ternary 
+
+Q3.What is the use of Switch case in Java programming?
+
+    Java switch case is a control flow statement just like a if else ladder
+
+    it checks the condition on that execute that matched case code block.
+
+Q4.What are the conditional Statements and use of conditional statements in Java? 
+
+    i. if else block
+    ii. switch case
+
+    when we want to execute a definite code block on the basis of a condition at that time we 
+    need conditional statements.
+
+Q5.What is the syntax of if else statement?
+
+    if(condition)
+    {
+        //code...
+    }
+    else{
+        //code
+    }
+
+Q6.How do you compare two strings in Java?
+
+    several methods are there 
+    1. .equals()
+    2. charecter wise check
+    3. .equalsIgnoreCase()
+    
+Q7.What is Mutable String in Java Explain with an example
+
+    Mutable string is a string which can be updated in that refference variable.
+    without creating another refference.
+
+Q8.Write a program to sort a String Alphabetically
+
+    class Solution{
+        public String sort(String s)
+        {
+            int n = s.length();
+
+            for(int i=0; i<n;i++)
+            {
+                int min = s.charAt(i);
+                for(int j=i+1;j<n;j++)
+                {
+                    if(s.charAt(min)>s.charAt(j))
+                    {
+                        min=j;
+                    }
+                }
+                char temp = s.charAt(min);
+                s.charAt(min) = s.charAt(i);
+                s.charAt(i) = temp;
+            }
+            return s;
+        }
+    }
+
+
+Q9.Write a program to check if the letter 'e' is present in the word 'Umbrella'.
+
+    class Solutiion{
+        public boolean check(String s)
+        {
+            int n = s.length();
+
+            for(int i=0;i<n;i++)
+            {
+                if(s.charAt(i) =='e')
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+    }
+
+
+Q10.Where exactly is the string constant pool located in the**
+memory?
+
+    String constant pool is section of memory which is present inside of the jvm memory heap area;
+
+
+
+
+
