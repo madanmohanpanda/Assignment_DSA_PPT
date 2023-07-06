@@ -1,0 +1,154 @@
+/*
+
+Q1.Write a simple Banking System program by using OOPs concept where you can get account 
+Holder name balance etc?
+    
+
+    class Bank{
+        privet float balance;
+        privet String name;
+        public void deposite(int amount)
+        {
+            this.balance += amount;
+        }
+        public void setName(String name)
+        {
+            this.name = name;
+        } 
+        public void showBalance()
+        {
+            System.out.println("Yout balance is : "+balance);
+        }
+        public int withdraw(int amount)
+        {
+            if(this.balance > amount)
+            {
+                return amount;
+            }
+            System.out.println("You have not enough balance");
+            return -1;
+        }
+    }
+
+Q2. Write a Program where you inherit method from parent class and show method Overridden Concept?
+
+    class Vehicle{
+        public void run()
+        {
+            System.out.printn("can run");
+        }
+    }
+
+    class Bike extends vehicle{
+        public void run()
+        {
+            System.out.println("run by two wheel");
+        }
+    }
+
+    class Test{
+        public static void main(String[] a)
+        {
+            Vehicle v =new vehicle();
+            v.run(); // can run
+            Bike b  = new Bike();
+            b.run(); // run by two wheel
+        }
+    }
+
+Q3.Write a program to show run time polymorphism in java?
+   class Vehicle{
+        public void run()
+        {
+            System.out.printn("can run");
+        }
+    }
+
+    class Bike extends vehicle{
+        public void run()
+        {
+            System.out.println("run by two wheel");
+        }
+    }
+
+    class Test{
+        public void test(Vehicle v)
+        {
+            v.run();
+        }
+        public static void main(String[] a)
+        {
+            Test t = new Test();
+            Vehicle v =new Bike();
+
+            t.test(v); // run by two wheel
+            
+        }
+    }
+Q4.Write a program to show Compile time polymorphism in java?
+
+    class Vehicle{
+        public void run()
+        {
+            System.out.printn("can run");
+        }
+        public void run(int x)
+        {
+            System.out.printn("can run by "+x+" wheel");
+        }
+    }
+ 
+    class Test{
+     
+        public static void main(String[] a)
+        {
+            
+            Vehicle v =new Vehicle();
+
+            v.run(2); // can run by 2 wheel
+            
+        }
+    }
+
+Q6. What is the benefit of encapsulation in java?
+
+    i. Better control.
+    ii. getter and setter
+    iii. Security
+    iv. Flexibility
+    v. data hiding
+
+Q7.Is java a t 100% Object oriented Programming language? If no why ?
+
+    Java is not 100% Object oriented Programming language because it does not
+    support multiple inheritance.
+
+Q8.What are the advantages of abstraction in java?
+
+    i. Hiding useless information
+    ii. generalizing 
+
+Q9.What is an abstraction explained with an Example?
+
+    abstraction is a concept to showing essential information and hiding the internal 
+    complexity.
+
+    abstact class Test {
+        abstact public void run();
+    }
+
+    class T extends Test{
+        public void run()
+        {
+            System.out.print("PW SKILLS");
+        }
+    }
+
+    we cannot create the Test class object rather we create the T class object.
+
+Q10.What is the final class in Java?
+
+    We can not extend any final class.
+
+    final calss does not have abstact method 
+      */
