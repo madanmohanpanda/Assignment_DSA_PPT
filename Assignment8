@@ -1,0 +1,40 @@
+Q1. ORM in Hibernate: ORM (Object-Relational Mapping) in Hibernate is the technique used to map Java objects to 
+relational database tables. It eliminates the need for writing explicit SQL queries by providing a transparent 
+mapping between the object-oriented domain model and the relational database model.
+
+Q2. Advantages of Hibernate over JDBC: Hibernate simplifies database programming by abstracting away the low-level 
+details of JDBC. It provides features such as automatic mapping, caching, transaction management, and query 
+optimization. Hibernate also offers better portability, increased productivity, and improved maintainability by 
+reducing boilerplate code and providing a more intuitive object-oriented approach to database operations.
+
+Q3. Important interfaces of Hibernate framework: Some important interfaces of Hibernate include Session, 
+SessionFactory, Configuration, Transaction, and Query.
+
+Q4. Session in Hibernate: A Session in Hibernate represents a single unit of work or a conversation between the 
+application and the database. It provides methods to perform CRUD (Create, Read, Update, Delete) operations on 
+persistent objects and manages the transaction boundaries.
+
+Q5. SessionFactory: The SessionFactory in Hibernate is a factory for creating Session objects. It is responsible 
+for initializing Hibernate configuration, managing database connections, and providing a pool of Session instances.
+
+Q6. HQL (Hibernate Query Language): HQL is a query language in Hibernate that allows developers to write 
+database-agnostic queries using object-oriented concepts instead of SQL. It operates on persistent objects and 
+their properties, enabling flexible and powerful querying capabilities.
+
+Q7. Many-to-Many Associations: Many-to-Many associations in Hibernate represent relationships between two entities 
+where each entity can have multiple instances associated with multiple instances of the other entity. It is 
+typically implemented using an intermediary join table.
+
+Q8. Hibernate Caching: Hibernate caching is a mechanism used to improve application performance by storing 
+frequently accessed data in memory. It reduces the need for repeated database queries by retrieving data from the 
+cache, providing faster access and reducing the load on the database.
+
+Q9. First Level Cache vs. Second Level Cache: First level cache is a session-level cache in Hibernate where 
+objects are cached within a session. It provides transaction-level caching and is enabled by default. Second level 
+cache is a shared cache that operates at the SessionFactory level, allowing caching of data across multiple 
+sessions.
+
+Q10. Hibernate Configuration File: The Hibernate Configuration File (hibernate.cfg.xml) is an XML file that 
+contains configuration settings for Hibernate, such as database connection properties, mapping configurations, 
+cache configurations, and other Hibernate-specific settings. It is used to configure Hibernate at application 
+startup and provide essential information for Hibernate's runtime behavior.
