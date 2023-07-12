@@ -1,0 +1,127 @@
+Q1.What is Collection in Java?
+
+    In Java, the term "Collection" refers to a group of objects or elements that are treated as a single unit. It 
+    is a 
+    framework provided by Java that consists of classes and interfaces to represent and manipulate collections of 
+    objects. The Collection framework provides a set of predefined interfaces (such as List, Set, Queue, etc.) and 
+    classes (such as ArrayList, HashSet, LinkedList, etc.) that offer different ways to store, retrieve, and 
+    manipulate collections of objects.
+
+
+Q2. Differentiate between Collection and collections in the context of Java.
+
+    In Java, "Collection" (with a capital 'C') refers to a framework that provides a set of interfaces and classes 
+    to manipulate and store groups of objects. It is a part of the Java Collections Framework.
+
+    On the other hand, "collections" (with a lowercase 'c') is a more general term that refers to any groups or 
+    containers of objects, irrespective of whether they are part of the Java Collections Framework or not.
+
+    The Java Collections Framework includes Collection interfaces (e.g., List, Set) and their implementations (e.
+    g., 
+    ArrayList, HashSet), while "collections" can also refer to other types of collections or data structures not 
+    provided by the Java Collections Framework.
+
+    "Collection" is more specific and refers to the built-in framework with predefined interfaces and classes, 
+    while 
+    "collections" is a broader term that can encompass collections from various sources and libraries.
+
+    The Java Collections Framework provides a unified and standardized way to work with collections, ensuring 
+    consistency and interoperability among different collection types, whereas "collections" in a broader sense 
+    may not have such standardization and interoperability guarantees.
+
+Q3. What are the advantages of the Collection framework?
+
+    The Collection framework in Java offers several advantages, including:
+
+    1. Reusability and Consistency: The Collection framework provides a set of predefined interfaces and classes 
+    that 
+    can be reused across different Java applications. It offers consistent and uniform APIs for manipulating 
+    
+    collections, regardless of the specific implementation being used. This promotes code reuse, maintainability, 
+    and 
+    simplifies the development process.
+
+    2. Abstraction and Polymorphism: The framework utilizes abstraction and polymorphism concepts to provide a 
+    high-level view of collections. The common interfaces, such as Collection, List, Set, and Queue, allow 
+    developers 
+    to write code that is independent of the specific implementation details. This enables easier switching 
+    between 
+    different implementations and enhances flexibility.
+
+
+4.Explain the various interfaces used in the Collection framework.
+
+    The Collection framework in Java includes several interfaces that provide different functionalities for 
+    storing and manipulating collections of objects. Here are the key interfaces used in the Collection framework:
+
+    1. Collection Interface: The Collection interface is the root interface of the Collection hierarchy. It 
+    defines 
+    the basic operations that are common to all collection types, such as adding elements, removing elements, 
+    checking 
+    for containment, and iterating over elements. Subinterfaces of Collection include List, Set, and Queue.
+
+    2. List Interface: The List interface extends the Collection interface and represents an ordered collection of 
+    elements. It allows duplicate elements and provides methods for positional access, such as retrieving, adding, 
+    and 
+    removing elements at specific indices. Common implementations of List are ArrayList and LinkedList.
+
+    3. Set Interface: The Set interface extends the Collection interface and represents a collection that does not 
+    allow duplicate elements. It provides methods to add, remove, and check for element existence in a collection. 
+    Common implementations of Set are HashSet, TreeSet, and LinkedHashSet.
+
+Q5.Differentiate between List and Set in Java.
+
+    In Java, List and Set are both interfaces in the Collection framework that represent different types of 
+    collections. Here are the key differences between List and Set:
+
+    Duplicate Elements: List allows duplicate elements, whereas Set does not. List implementations, such as 
+    ArrayList 
+    or LinkedList, can store the same element multiple times, maintaining the insertion order. Set 
+    implementations, 
+    such as HashSet or TreeSet, enforce uniqueness, allowing only distinct elements in the collection.
+
+    Ordering: List maintains the order of elements based on their insertion sequence. It allows positional access 
+    to 
+    elements and provides methods to retrieve, add, or remove elements at specific indices. Set does not maintain 
+    any 
+    particular order among elements. The order of elements in a Set implementation can be influenced by factors 
+    such 
+    as hashing or sorting, but it is not based on insertion sequence.
+
+Q6.What is the Differentiate between Iterator and ListIterator in Java.
+
+    In Java, both Iterator and ListIterator are interfaces that provide a way to traverse elements in a 
+    collection. 
+    However, there are several differences between the two:
+
+    1. Direction: Iterator can traverse elements in a collection only in a forward direction, whereas ListIterator 
+    can 
+    traverse elements in both forward and backward directions. ListIterator provides additional methods like 
+    `previous
+    ()` and `hasPrevious()` to support backward traversal.
+
+    2. Element Removal: Iterator provides a `remove()` method to remove the current element during traversal. 
+    ListIterator, on the other hand, provides the additional functionality to add and modify elements while 
+    traversing 
+    using methods like `add()` and `set()`.
+
+
+Q8.What is collision in HashMap?
+
+    Collision in HashMap occurs when two or more keys map to the same hash code and are stored in the same bucket. 
+    This happens because the number of possible hash codes is finite, while the number of potential keys is 
+    infinite. Collisions are resolved by chaining or using a balanced tree structure within each bucket.
+
+Q9.Distinguish between a hashmap and a Treemap.
+
+    HashMap and TreeMap are both implementations of the Map interface in Java. HashMap provides constant-time 
+    performance for basic operations and does not maintain any particular order. TreeMap, on the other hand, 
+    maintains keys in sorted order and provides logarithmic-time performance for basic operations, making it 
+    suitable for ordered map requirements.
+
+Q10.Define LinkedHashMap in Java.
+
+    LinkedHashMap is an implementation of the Map interface in Java that combines features of HashMap and 
+    LinkedList. It maintains insertion order of entries and allows predictable iteration. It offers constant-time 
+    performance for basic operations and provides efficient access to both the head and tail elements of the 
+    linked list.
