@@ -1,0 +1,81 @@
+Q1.What is the use of JDBC in java?
+
+    JDBC (Java Database Connectivity) is a Java API that allows Java programs to interact with databases. It 
+    provides a standard way to connect to various databases, execute SQL queries, retrieve and manipulate data, 
+    and perform database operations. JDBC enables seamless integration of Java applications with databases for 
+    data storage and retrieval needs.
+
+
+Q2.What are the steps involved in JDBC?
+    The steps involved in JDBC are:
+
+    1. Load the JDBC driver.
+    2. Establish a database connection using the DriverManager class.
+    3. Create a Statement or PreparedStatement object for executing SQL queries.
+    4. Execute the SQL statement and retrieve the results.
+    5. Process the results and handle any exceptions that may occur.
+    6. Close the database connection and release any resources used.
+
+Q3.What are the types of statement in JDBC in java?
+    In JDBC, there are three types of statements:
+    1. Statement: Used for executing simple SQL queries. It may not provide protection against SQL injection.
+    2. PreparedStatement: Pre-compiled SQL statement with parameters. It offers better performance and protection 
+    against SQL injection.
+    3. CallableStatement: Used for executing stored procedures or functions in the database. It allows passing 
+    input and output parameters.
+
+Q4.What is Servlet in Java?
+    A Servlet in Java is a server-side program that runs on a web server to handle incoming requests and generate 
+    dynamic web content. It follows the Java Servlet API and provides a modular, reusable, and 
+    platform-independent way to build web applications by processing HTTP requests and producing HTTP responses.
+    
+Q5.Explain the life Cycle of servlet?
+
+    The life cycle of a servlet consists of several stages: 1. Loading: The servlet container loads the servlet 
+    class. 2. Initialization: The container initializes the servlet by calling its `init()` method. 3. Request 
+    Handling: The servlet handles multiple requests by invoking the `service()` method. 4. Destruction: The 
+    container calls the `destroy()` method to release resources when the servlet is no longer needed.
+
+
+Q6.Explain the difference between the RequestDispatcher.forward() and HttpServletResponse.sendRedirect() methods?
+
+    The `RequestDispatcher.forward()` and `HttpServletResponse.sendRedirect()` methods are both used for 
+    redirecting requests in servlets, but they have some key differences.
+
+    `RequestDispatcher.forward()` performs an internal server-side redirect. It forwards the request and response 
+    objects to another resource (servlet, JSP, or HTML) within the same server. The client is unaware of this internal 
+    forwarding and the URL remains the same. It is often used for server-side processing, passing control to another 
+    resource for further handling.
+
+    `HttpServletResponse.sendRedirect()` performs an external redirect. It sends a response to the client with a new 
+    URL, which causes the client's browser to make a new request to that URL. This results in a new request-response 
+    cycle, and the URL in the browser's address bar gets updated. It is commonly used for client-side redirects and 
+    navigation to external resources.
+
+    In summary, `forward()` is a server-side redirect, keeping the same URL and allowing internal processing, while 
+    `sendRedirect()` is a client-side redirect, changing the URL and triggering a new request-response cycle.
+
+Q9.What are some of the advantages of Servlets?
+    Some advantages of using servlets in Java for web development are:
+
+    1. Platform Independence: Servlets are written in Java and run on a Java-enabled web server, making them 
+    platform-independent and allowing them to run on any operating system that supports Java.
+
+    2. Wide Industry Support: Servlets are a standard part of the Java Enterprise Edition (Java EE) platform and are 
+    widely supported by various web servers and application servers, ensuring compatibility and portability across 
+    different environments.
+
+    3. Performance: Servlets are designed for high-performance web applications. They are efficient, scalable, and can 
+    handle multiple requests concurrently, making them suitable for handling heavy traffic and demanding workloads.
+
+    4. Server-side Processing: Servlets enable server-side processing, allowing dynamic content generation, database 
+    access, and business logic execution. They provide a powerful programming model for building interactive and 
+    data-driven web applications.
+
+    5. Extensibility: Servlets can be easily extended and customized using filters, listeners, and other Java EE 
+    components. This flexibility allows for modular and reusable code
+
+10.What are the limitations of JSP?
+    Some limitations of JSP (JavaServer Pages) include: mixing presentation and logic, increased complexity for 
+    large-scale applications, performance overhead due to translation and compilation, lack of separation between HTML 
+    and Java code, and potential security vulnerabilities if not used properly.
