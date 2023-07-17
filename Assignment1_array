@@ -1,0 +1,272 @@
+Q1. Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
+
+  class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        int size = nums.length;
+        for(int i=0;i<size;i++)
+        {
+            for(int j=i+1;j<size;j++)
+            {
+                if(nums[i]+nums[j] == target)
+                {
+                   return new int[] {i,j};
+                    
+                }
+            }
+        }
+
+        return new int[] {};
+        
+    }
+}
+
+Q2.  Given an integer array nums and an integer val, remove all occurrences of val in nums in-place. 
+  The order of the elements may be changed. Then return the number of elements in nums which are not equal to val.
+  class Solution {
+    public int removeElement(int[] nums, int val) {
+        int i = 0;
+        for (int j = 0; j < nums.length; j++) {
+            if (nums[j] != val) {
+                int temp = nums[i];
+                nums[i] = nums[j];
+                nums[j] = temp;
+                i++;
+            }
+        }
+        return i;
+    }
+}
+
+Q3.
+
+ Given a sorted array of distinct integers and a target value, return the index if the target is found. If not, return the index where it would 
+be if it were inserted in order.
+  class Solution {
+    public int serch(int[] nums, int low, int high, int target){
+        int mid =low + (high-low)/2;
+
+
+        if(low<=high){
+            mid = low + (high-low)/2;
+
+            if(nums[mid]==target)
+            {
+                return mid;
+            }else if(nums[mid]> target){
+                return serch(nums, low, mid-1, target );
+            }
+            else{
+                return serch(nums, mid+1 , high, target);
+            }
+            
+        }
+        return mid;
+    }
+    public int searchInsert(int[] nums, int target)
+        {
+            int low = 0;
+            int high = nums.length -1;
+            int index = serch(nums,low, high, target );
+
+            return index;
+        }
+    
+}
+
+Q4.You are given a large integer represented as an integer array digits, where each digits[i] is the ith digit of the integer. The digits are
+ordered from most significant to least significant in left-to-right order. The large integer does not contain any leading 0's.
+  import java.util.Arrays;
+
+public class LargeIntegerOperations {
+    
+    public static void main(String[] args) {
+        int[] digits = {1, 2, 3, 4, 5}; // Example integer array representing the large integer
+        System.out.println("Original large integer: " + Arrays.toString(digits));
+        
+        int[] incrementedDigits = increment(digits);
+        System.out.println("Incremented large integer: " + Arrays.toString(incrementedDigits));
+        
+        int[] decrementedDigits = decrement(digits);
+        System.out.println("Decremented large integer: " + Arrays.toString(decrementedDigits));
+        
+        long integerResult = convertToInt(digits);
+        System.out.println("Converted large integer to long: " + integerResult);
+    }
+    
+    // Function to increment the large integer by 1
+    public static int[] increment(int[] digits) {
+        int carry = 1;
+        for (int i = digits.length - 1; i >= 0; i--) {
+            int sum = digits[i] + carry;
+            digits[i] = sum % 10;
+            carry = sum / 10;
+        }
+        if (carry > 0) {
+            int[] newDigits = new int[digits.length + 1];
+            newDigits[0] = carry;
+            System.arraycopy(digits, 0, newDigits, 1, digits.length);
+            return newDigits;
+        }
+        return digits;
+    }
+    
+    // Function to decrement the large integer by 1
+    public static int[] decrement(int[] digits) {
+        int borrow = 1;
+        for (int i = digits.length - 1; i >= 0; i--) {
+            int diff = digits[i] - borrow;
+            if (diff < 0) {
+                digits[i] = diff + 10;
+                borrow = 1;
+            } else {
+                digits[i] = diff;
+                borrow = 0;
+            }
+        }
+        if (digits[0] == 0 && digits.length > 1) {
+            int[] newDigits = new int[digits.length - 1];
+            System.arraycopy(digits, 1, newDigits, 0, digits.length - 1);
+            return newDigits;
+        }
+        return digits;
+    }
+    
+    // Function to convert the large integer represented by the digits array to a long data type
+    public static long convertToInt(int[] digits) {
+        long result = 0;
+        for (int digit : digits) {
+            result = result * 10 + digit;
+        }
+        return result;
+    }
+}
+
+Q5. 
+You are given two integer arrays nums1 and nums2, sorted in non-decreasing order, and two integers m and n, representing the number of 
+elements in nums1 and nums2 respectively.
+
+Merge nums1 and nums2 into a single array sorted in non-decreasing order.
+
+class Solution {
+    public void merge(int[] nums1, int m, int[] nums2, int n) {
+        int []nums = new int[m];
+        for(int i=0;i<m;i++)
+        {
+            nums[i] = nums1[i];
+        }
+
+        int i=0,j=0,k=0;
+
+        while(i<m &&  j<n)
+        {
+            if(nums[i]<=nums2[j])
+            {
+                nums1[k] = nums1[i];
+                i++;
+            }
+            else{
+                nums1[k] = nums2[j];
+                j++;
+            }
+            k++;
+ 
+        }
+        
+        // Remeaining elements from nums1;
+            while(i<m)
+            {
+                nums1[k] = nums[i];
+                i++;
+                k++;
+            }
+            while(j<n)
+            {
+                nums1[k] = nums2[j];
+                k++;
+                j++;
+            }
+    }
+}
+
+Q6.Given an integer array nums, return true if any value appears at least twice in the array, and return false if every element is distinct.
+class Solution {
+    public boolean containsDuplicate(int[] nums) {
+        int size = nums.length;
+        /* for(int i=0;i<size-1;i++)
+        {
+            for(int j=i+1; j<size; j++){
+                if(nums[i] == nums[j])
+                {
+                    return true;
+                }
+            }
+        }
+        return false; */
+
+        Arrays.sort(nums);
+        for(int i=1; i<size; i++)
+        {
+            if(nums[i] == nums[i-1])
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+}
+
+
+
+
+
+Q7. Given an integer array nums, move all 0's to the end of it while maintaining the relative order of the nonzero elements.
+
+class Solution {
+    public void moveZeroes(int[] nums) {
+       if(nums.length == 1) return;
+       int count=0;
+       for(int i=0;i<nums.length-1;i++)
+       {
+           for(int j=i+1; j<nums.length;j++){
+           if(nums[i] == 0 && nums[j] != 0)
+           {
+               count ++;
+               int temp = nums[j];
+               nums[j] = nums[i];
+               nums[i] = temp;
+           }
+           }
+           
+       }
+
+    }
+}
+
+Q8.  You have a set of integers s, which originally contains all the numbers from 1 to n. Unfortunately, due to some error, 
+one of the numbers in s got duplicated to another number in the set, which results in repetition of one number and loss of another number.
+
+  class Solution {
+    public int[] findErrorNums(int[] nums) {
+        int x[] = new int[nums.length + 1];
+        
+        // Count the occurrences of each number
+        for (int i : nums) {
+            x[i]++;
+        }
+        
+        int dup = 0, miss = 0;
+        
+        // Find the duplicate and missing numbers
+        for (int i = 1; i < x.length; i++) {
+            if (x[i] == 2) {
+                dup = i;
+            }
+            if (x[i] == 0) {
+                miss = i;
+            }
+        }
+        
+        // Return the result as an array
+        return new int[]{dup, miss};
+    }
+}
